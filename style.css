@@ -14,8 +14,9 @@ body {
 }
 
 h1 {
-  font-size: 14px;
+  font-size: 24px;
   color: #fff;
+  margin-bottom: 5rem;
 }
 
 canvas {
