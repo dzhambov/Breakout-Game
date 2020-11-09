@@ -107,6 +107,8 @@ function movePaddle() {
 
 // Draw everything
 function draw() {
+  // Clear canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height); 
   drawBall();
   drawPaddle();
   drawScore();
@@ -128,17 +130,18 @@ update();
 
 // Keydow event
 function keyDown(e) {
-  console.log(1);
-  // if (e.key === 'Right' || e.key === 'ArrowRight') {
-  //   paddle.dx = paddle.speed;
-  // } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
-  //   paddle.dx = -paddle.speed;
-  // }
+  if (e.key === 'Right' || e.key === 'ArrowRight') {
+    paddle.dx = paddle.speed;
+  } else if (e.key === 'Left' || e.key === 'ArrowLeft') {
+    paddle.dx = -paddle.speed;
+  }
 }
 
 // Keyup event
 function keyUp(e) {
-  console.log(2);
+  if(e.key === 'Right' || e.key === 'ArrowRight' || e.key === 'Left' || e.key === 'ArrowLeft') {
+    paddle.dx = 0;
+  }
 }
 
 // Keyboard event handlers
